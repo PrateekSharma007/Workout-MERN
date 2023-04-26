@@ -14,16 +14,17 @@ app.use("/api/workouts/",workoutRoutes)
 
 //Connect to mongo db 
 
-mongoose.connect(process.env.MONGO_URL)
-    .then(() => { })
+
+const PORT = 8000; 
+MONGO_URI = "mongodb+srv://Workout-MERN:service123@mern-todo.5ghzzln.mongodb.net/?retryWrites=true&w=majority"
+mongoose.connect(MONGO_URI)
+    .then(() => { 
+        app.listen(PORT , () => { 
+            console.log("conmected to db and connected to port 8000")
+        })
+    })
     .catch((error) => { 
         console.log(error)
     })
 
 
-
-const PORT = 8000; 
-
-app.listen(PORT , () => { 
-    console.log("connected to port 8000")
-})
