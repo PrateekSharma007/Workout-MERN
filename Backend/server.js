@@ -20,7 +20,7 @@ MONGO_URI = "mongodb+srv://Workout-MERN:service123@mern-todo.5ghzzln.mongodb.net
 mongoose.connect(MONGO_URI)
     .then(() => { 
         app.listen(PORT , () => { 
-            console.log("conmected to db and connected to port 8000")
+            console.log("connected to db and connected to port 8000")
         })
     })
     .catch((error) => { 
