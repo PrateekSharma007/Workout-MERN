@@ -25,6 +25,17 @@ const getsingleWorkout = async (req,res) => {
 }
 
 
+//Update a workout 
+const updateworkout = async (req,res) => { 
+    const {id} = req.params ; 
+
+    if(!mongoose.Types.ObjectId.isValid(id)) { 
+        return res.status(404).json({error : "No such Workout " })
+    }
+}
+
+
+
 //delete a workout 
 const deleteWorkout = async (req,res) => { 
     const {id} = req.params ; 
